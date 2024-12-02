@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 // Use environment variables to configure the MongoDB URI
-const password = encodeURIComponent(process.env.MONGO_PASSWORD?.trim());
+const password = encodeURIComponent(process.env.MONGO_PASSWORD.trim());
 const MONGO_URI =`mongodb+srv://arunsingh0789:${password}@taskcluster.fzu6s.mongodb.net/?retryWrites=true&w=majority&appName=TaskCluster`;
 
-const mongoURI = MONGO_URI || "mongodb://localhost:27017/taskm";
+const mongoURI = MONGO_URI;
 
 // Function to connect to MongoDB
 const connectToMongo = async () => {

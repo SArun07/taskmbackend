@@ -24,5 +24,7 @@ jobs:
     steps:
       - name: Pull image from docker hub
         run: docker pull arun0789/taskmbackend:latest
+      - name: Delete old container
+        run: docker rm -f taskmbackend-container
       - name: Run Docker Container
         run: docker run -d -p 8000:8000 --name taskmbackend-container -e MONGO_PASSWORD='${{ secrets.MONGO_PASSWORD }}' arun0789/taskmbackend
